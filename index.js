@@ -6,4 +6,11 @@ function generateId() {
   return Number(R.join('', [id1, id2]));
 }
 
+function generateName(listsToCompose) {
+  return R.join(' ', R.map(cur => {
+    return R.nth(Math.trunc(R.multiply(Math.random(), R.length(cur))), cur);
+  }, listsToCompose));
+}
+
 exports.generateId = generateId;
+exports.generateName = generateName;
