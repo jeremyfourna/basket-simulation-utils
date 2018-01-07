@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "author": "Jeremy Fourna <jeremyfourna@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "ramda": "^0.25.0"
   },
