@@ -9,10 +9,7 @@
 ## Usage
 
 ```js
-const {
-	generateId,
-	generateName
-} = require('basket-simulation-utils');
+const { generateId, generateName } = require('basket-simulation-utils');
 
 const randomId = generateId(); // Eg: '911140631528115500'
 
