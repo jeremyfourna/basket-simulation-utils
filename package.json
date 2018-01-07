@@ -1,7 +1,7 @@
 {
   "name": "basket-simulation-utils",
   "version": "0.0.3",
-  "description": "",
+  "description": "Utils for the basket-simulation project",
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha",
