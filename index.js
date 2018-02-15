@@ -6,7 +6,7 @@ function generateId() {
   const id1 = Math.round(Math.random() * idLength);
   const id2 = Math.round(Math.random() * idLength);
 
-  return Number(R.join('', [id1, id2]));
+  return R.join('', [id1, id2]);
 }
 
 // generateName :: [array] -> string
