@@ -14,9 +14,9 @@ const crypto = require('crypto');
 
 // generateId :: a -> string
 function generateId() {
-  // concart string with hash for use in the DOM
+  // concat string with hash for use in the DOM
   return concat(
-    'bs',
+    'BS',
     crypto.randomBytes(10).toString('hex').toUpperCase()
   );
 }
