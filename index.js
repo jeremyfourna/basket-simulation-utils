@@ -1,21 +1,39 @@
-const R = require('ramda');
+/* jshint esversion: 6 */
+
+const {
+  concat,
+  join,
+  map,
+  multiply,
+  length,
+  nth,
+  compose
+} = require('ramda');
+const crypto = require('crypto');
+
 
 // generateId :: a -> string
 function generateId() {
-  const idLength = 1000000000;
-  const id1 = Math.round(Math.random() * idLength);
-  const id2 = Math.round(Math.random() * idLength);
-
-  return R.join('', [id1, id2]);
+  // concart string with hash for use in the DOM
+  return concat(
+    'bs',
+    crypto.randomBytes(10).toString('hex').toUpperCase()
+  );
 }
 
 // generateName :: [array] -> string
 function generateName(listsToCompose) {
-  return R.join(' ', R.map(cur => {
-    const randomPositionInList = Math.trunc(R.multiply(Math.random(), R.length(cur)));
-    return R.nth(randomPositionInList, cur);
-  }, listsToCompose));
+  // randomPositionInList :: array -> int
+  function randomPositionInList(list) {
+    return Math.trunc(multiply(Math.random(), length(list)));
+  }
+
+  return compose(
+    join(' '),
+    map(cur => nth(randomPositionInList(cur), cur))
+  )(listsToCompose);
 }
+
 
 exports.generateId = generateId;
 exports.generateName = generateName;

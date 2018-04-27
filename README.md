@@ -11,7 +11,7 @@
 ```js
 const { generateId, generateName } = require('basket-simulation-utils');
 
-const randomId = generateId(); // Eg: '911140631528115500'
+const randomId = generateId(); // Eg: 'BS9111AY63OYH811550N'
 
 const firstNames = ['Brian', 'James'];
 const lastNames = ['Doe', 'Allen'];
